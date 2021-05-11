@@ -1,6 +1,10 @@
 import "./Puzzle.css";
 import _ from "lodash";
 import { useEffect, useState } from "react";
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
+
+dayjs.extend(duration);
 
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
@@ -9,6 +13,46 @@ export default function Puzzle() {
   const [puzzleColumns] = useState(4);
   const [boxes, setBoxes] = useState([]);
 
+  //chrono
+  const initialTimerValue = 0;
+  const [secondsLeft, setSecondsLeft] = useState(initialTimerValue);
+  const [chronoStarted, setChronoStarted] = useState(true);
+
+  const handleChronoToggle = () => {
+    setChronoStarted(!chronoStarted);
+  };
+
+  useEffect(() => {
+    let timerId = null;
+    if (chronoStarted) {
+      timerId = setInterval(() => {
+        setSecondsLeft((left) => left + 1);
+      }, 1000);
+    }
+    return () => {
+      if (timerId) clearInterval(timerId);
+    };
+  }, [chronoStarted]);
+
+  useEffect(() => {
+    let timerId = null;
+    if (chronoStarted) {
+      timerId = setInterval(() => {
+        setSecondsLeft((left) => left + 1);
+      }, 1000);
+    }
+    return () => {
+      if (timerId) clearInterval(timerId);
+    };
+  }, [chronoStarted]);
+
+  useEffect(() => {
+    if (secondsLeft === 0) {
+      setSecondsLeft(initialTimerValue);
+    }
+  }, [secondsLeft]);
+
+  //Puzzle
   useEffect(() => {
     const tilesArray = [];
     let i = 0;
@@ -63,7 +107,9 @@ export default function Puzzle() {
   useEffect(() => {
     if (boxes.length > 0) {
       if (boxes.filter((tile) => tile.positionBase !== tile.id).length === 0) {
-        sleep(300).then(() => alert("Congratulations! You win!"));
+        sleep(300)
+          .then(() => setChronoStarted(!chronoStarted))
+          .then(() => alert("Congratulations! You win!"));
       }
     }
   }, [boxes]);
@@ -87,22 +133,30 @@ export default function Puzzle() {
   };
 
   return (
-    <div className="puzzle">
-      {boxes.map((tile) => (
-        <div
-          className="fragment"
-          key={tile.positionBase}
-          style={{
-            "--x": tile.x,
-            "--y": tile.y,
-            "--i": tile.positionBase,
-          }}
-          draggable={true}
-          onDragStart={handleDragStart(tile.id)}
-          onDragOver={handleDragOver(tile.id)}
-          onDrop={handleDrop(tile.id)}
-        ></div>
-      ))}
+    <div>
+      <button type='button' onClick={handleChronoToggle}>
+        {chronoStarted ? "Pause" : "Start"}
+      </button>
+      <div className='text-xl'>
+        {dayjs.duration(secondsLeft, "seconds").format("mm:ss")}
+      </div>
+      <div className='puzzle'>
+        {boxes.map((tile) => (
+          <div
+            className='fragment'
+            key={tile.positionBase}
+            style={{
+              "--x": tile.x,
+              "--y": tile.y,
+              "--i": tile.positionBase,
+            }}
+            draggable={true}
+            onDragStart={handleDragStart(tile.id)}
+            onDragOver={handleDragOver(tile.id)}
+            onDrop={handleDrop(tile.id)}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 }
