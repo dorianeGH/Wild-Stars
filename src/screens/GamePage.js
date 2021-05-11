@@ -1,3 +1,3 @@
-const GamePage = () => {
+export default function GamePage() {
   return <div></div>;
-};
+}
