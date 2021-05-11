@@ -12,7 +12,7 @@ export default function Card()  {
       </div>
 
       <div>
-        <img src="https://i.postimg.cc/SxLx0fHV/bg01.jpg" alt="image1" class="w-full h-48 object-cover mb-2"></img>
+        <img src="https://i.postimg.cc/SxLx0fHV/bg01.jpg" alt="image1" className="w-full h-48 object-cover mb-2"></img>
         <p className="mb-3 tracking-wide text-base text-shadow">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, omnis.
         </p>
@@ -21,14 +21,14 @@ export default function Card()  {
         </button>
       </div>
     </div>
-    <div className="backdrop w-10/12 md:w-1/4 bg-white bg-opacity-10 rounded p-3 text-white border border-white shadow-lg">
-
-      <div cclassName="w-full mb-3 pb-3 border-b border-1 border-white">
+    <div className="backdrop w-10/12 md:w-1/4 bg-white bg-opacity-10 rounded p-3 text-white border border-gray-300 shadow-lg">
+ 
+      <div className="w-full mb-3 pb-3 border-b border-1 border-white">
         <h3 className="text-xl font-semibold text-shadow">Something Good</h3>
       </div>
 
       <div>
-        <img src="https://i.postimg.cc/J4khxLqf/bg02.jpg" alt="image2" class="w-full h-48 object-cover mb-2"></img>
+        <img src="https://i.postimg.cc/J4khxLqf/bg02.jpg" alt="image2" className="w-full h-48 object-cover mb-2"></img>
         <p className="mb-3 tracking-wide text-base text-shadow">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, omnis.
         </p>
@@ -43,7 +43,7 @@ export default function Card()  {
         <h3 className="text-xl font-semibold text-shadow">Something Good</h3>
       </div>
       <div>
-        <img src="https://i.postimg.cc/VNYLzb8w/bg03.jpg" alt="image3" class="w-full h-48 object-cover mb-2"></img>
+        <img src="https://i.postimg.cc/VNYLzb8w/bg03.jpg" alt="image3" className="w-full h-48 object-cover mb-2"></img>
         <p className="mb-3 tracking-wide text-base text-shadow">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, omnis.
         </p>
