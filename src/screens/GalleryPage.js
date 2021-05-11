@@ -2,6 +2,7 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./gallery-page.css"
 // require("dotenv").config();
 
 //Call API for pictures
@@ -28,7 +29,7 @@ export default function GalleryPage() {
   }, []);
 
   return (
-    <div className="bg-image bg-fixed	 w-full min-h-screen flex flex-wrap justify-center items-center gap-10 py-5">
+    <div className="gallery-page bg-image bg-fixed w-full min-h-screen flex flex-wrap justify-center items-center gap-10 py-5">
       {pictureList.map(({ title, url }, key) => (
         <Card key={key} id={key} title={title} url={url} />
       ))}
