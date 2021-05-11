@@ -9,7 +9,7 @@ function App() {
       <Header websiteName='Wild games' />
       <Switch>
         <Route exact path='/' component={GalleryPage} />
-        {/* <Route path='/game/:id' component={GamePage} /> */}
+        <Route path='/games/:id' component={GamePage} />
       </Switch>
     </BrowserRouter>
   );
