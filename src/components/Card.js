@@ -7,11 +7,9 @@ export default function Card({ title, url, id }) {
   const [imageHeight, setImageHeight] = useState(0);
 
   function handleSize(image) {
-    if (image) {
-      setImageWidth(image.naturalWidth);
-      setImageHeight(image.naturalHeight);
-      console.log(imageWidth);
-      console.log(imageHeight);
+    if (image.target.complete) {
+      setImageWidth(image.target.naturalWidth);
+      setImageHeight(image.target.naturalHeight);
     }
   }
 
@@ -35,7 +33,7 @@ export default function Card({ title, url, id }) {
         <div>
           <img
             className="w-full h-48 object-cover mb-2"
-            ref={(image) => {
+            onLoad={(image) => {
               handleSize(image);
             }}
             src={url}

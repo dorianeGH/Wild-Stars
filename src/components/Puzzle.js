@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
-  console.log(imageHeight);
-  console.log(imageWidth);
   const [puzzleRows, setPuzzleRows] = useState(3);
   const [puzzleColumns, setPuzzleColumns] = useState(4);
   const [boxes, setBoxes] = useState([]);
@@ -108,8 +106,7 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
         >
           -
         </button>
-      </div>
-      <div>
+
         <button
           id="button-plus"
           onClick={() => {
@@ -134,8 +131,8 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
           "--puzzle-img": `url(${imgSrc})`,
           "--puzzle-row": `${puzzleRows}`,
           "--puzzle-col": `${puzzleColumns}`,
-          "--puzzle-width": `${imageWidth / 20}rem`,
-          "--puzzle-height": `${imageHeight / 20}rem`,
+          "--puzzle-width": `${imageWidth / 25}rem`,
+          "--puzzle-height": `${imageHeight / 25}rem`,
         }}
       >
         {boxes.map((tile) => (
