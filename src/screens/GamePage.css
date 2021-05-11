@@ -1,14 +1,18 @@
 .bg-image {
-background-image: url(https://i.postimg.cc/Pq2fJrXw/bg00.jpg);
-background-size: cover;
-background-position: center;
-    }
+	background-image: url(https://apod.nasa.gov/apod/image/2103/M8_HLA_F125wF160w_Nachman.jpg);
+	background-size: cover;
+	background-position: center;
+}
 
 .backdrop {
-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 }
 
 .text-shadow {
-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.game-page {
+	position: relative;
+	top: 10vmax;
+}
