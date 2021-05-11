@@ -1,8 +1,17 @@
 import React from 'react';
+import { useParams } from "react-router";
+import Puzzle from "../components/Puzzle";
+import { useLocation } from "react-router-dom";
 import './GamePage.css';
 
 const GamePage = () => {
   //components of the page and of the game
+  const { id, url } = useParams();
+  console.log(id);
+
+  const location = useLocation();
+  const imgSrc = location.state != null ? location.state.url : "";
+  console.log(imgSrc);
   return (
           <div>
              <div className="bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
