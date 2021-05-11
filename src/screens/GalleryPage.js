@@ -5,7 +5,6 @@ import Card from "../components/Card";
 
 export default function GalleryPage  ()  {
   return <div>
-    <h1>Bienvenue !!!</h1>
     <Card />
   </div>;
 };
