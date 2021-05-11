@@ -26,5 +26,4 @@ const GamePage = () => {
           </div>
 )};
 
-
-export default GamePage
+export default GamePage;
