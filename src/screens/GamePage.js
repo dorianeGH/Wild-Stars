@@ -1,3 +1,8 @@
 const GamePage = () => {
-  return <div></div>;
+  return <div>
+    <h1>Jouez !</h1>
+  </div>;
 };
+
+
+export default GamePage
