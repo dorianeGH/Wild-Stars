@@ -1,0 +1,9 @@
+.header-bg {
+	background-image: url(https://apod.nasa.gov/apod/image/2103/M8_HLA_F125wF160w_Nachman.jpg);
+	margin: 0;
+	height: 10vmax;
+	min-width: 100vmax;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
