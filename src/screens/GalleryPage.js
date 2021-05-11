@@ -28,12 +28,9 @@ export default function GalleryPage() {
   }, []);
 
   return (
-    <div>
+    <div className='bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5'>
       {pictureList.map(({ title, url, key }) => (
-        <div>
-          <h1>{title}</h1>
-          <img style={{ width: "100%" }} src={url} alt={title} />
-        </div>
+        <Card title={title} url={url} />
       ))}
     </div>
   );
