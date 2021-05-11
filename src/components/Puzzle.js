@@ -8,9 +8,9 @@ dayjs.extend(duration);
 
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
-export default function Puzzle() {
-  const [puzzleRows] = useState(3);
-  const [puzzleColumns] = useState(4);
+export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
+  const [puzzleRows, setPuzzleRows] = useState(3);
+  const [puzzleColumns, setPuzzleColumns] = useState(4);
   const [boxes, setBoxes] = useState([]);
 
   //chrono
@@ -68,7 +68,7 @@ export default function Puzzle() {
         return { ...tile, id: index };
       });
     setBoxes(shuffled);
-  }, []);
+  }, [puzzleColumns, puzzleRows]);
 
   const swapBoxes = (fromBox, toBox) => {
     let fromIndex = -1;
@@ -140,7 +140,53 @@ export default function Puzzle() {
       <div className='text-xl'>
         {dayjs.duration(secondsLeft, "seconds").format("mm:ss")}
       </div>
-      <div className='puzzle'>
+      <div>
+        <button
+          id='button-plus'
+          onClick={() => {
+            setPuzzleRows(puzzleRows + 1);
+          }}
+        >
+          +
+        </button>
+        <span>Rows number: {puzzleRows}</span>
+        <button
+          id='button-minus'
+          onClick={() => {
+            setPuzzleRows(puzzleRows - 1);
+          }}
+        >
+          -
+        </button>
+
+        <button
+          id='button-plus'
+          onClick={() => {
+            setPuzzleColumns(puzzleColumns + 1);
+          }}
+        >
+          +
+        </button>
+        <span>Columns number: {puzzleColumns}</span>
+        <button
+          id='button-minus'
+          onClick={() => {
+            setPuzzleColumns(puzzleColumns - 1);
+          }}
+        >
+          -
+        </button>
+      </div>
+      <div
+        className='puzzle'
+        style={{
+          "--puzzle-img": `url(${imgSrc})`,
+          "--puzzle-row": `${puzzleRows}`,
+          "--puzzle-col": `${puzzleColumns}`,
+          "--puzzle-width": `${imageWidth / 25}rem`,
+          "--puzzle-height": `${imageHeight / 25}rem`,
+        }}
+      >
         {boxes.map((tile) => (
           <div
             className='fragment'
