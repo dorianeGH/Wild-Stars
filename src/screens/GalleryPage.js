@@ -12,7 +12,6 @@ export default function GalleryPage() {
   const end_date = "2021-05-11";
   const [pictureList, setPictureList] = useState([]);
 
-  //api.nasa.gov/planetary/apod?api_key=zf6xTmUCfd1EPqqoaApM6xSgtYTXz44wmlvrzNiU&start_date=2021-05-01&end_date=2021-05-11
   useEffect(() => {
     axios
       .get(
