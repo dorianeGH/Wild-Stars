@@ -14,13 +14,12 @@ const GamePage = () => {
   console.log(imgSrc);
   return (
           <div>
-             <div className="bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
-              <div className="backdrop w-10/12 md:w-1/4 bg-white bg-opacity-10 rounded p-3 text-white border border-gray-300 shadow-lg">
-                {/* header */}
+              <video autoPlay loop muted className="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+              <source src="https://live.staticflickr.com/video/16037006602/402e4e26a3/288p.mp4?s=eyJpIjoxNjAzNzAwNjYwMiwiZSI6MTYyMDc3NjIwNSwicyI6ImMyMWRmNDFkYzVlYjBmZDllZTI3ZGNiYzVkZWVkMWQ2YzhlZTU1NTYiLCJ2IjoxfQ" type="video/mp4" />Your browser does not support the video tag.
+              </video>
                 <div className="w-full mb-3 pb-3 border-b border-1 border-white">
                   <h3 className="text-xl font-semibold text-shadow">Play Now !</h3>
                 </div>
-                {/* body */}
                 <div>
                   <img src="https://media.giphy.com/media/WTuPi9GCylyNZ6Wr56/giphy.gif" alt="jigsaw" className="w-full h-48 object-cover mb-2"/>
                   <p className="mb-3 tracking-wide text-base text-shadow">
@@ -30,8 +29,6 @@ const GamePage = () => {
                     Back
                   </button>
                 </div>
-              </div>
-            </div>
           </div>
 )};
 
