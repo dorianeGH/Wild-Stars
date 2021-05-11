@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import GalleryPage from './screens/GalleryPage';
-// import GalleryPage from "../src/components/"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
+import GamePage from "./screens/GamePage";
+import GalleryPage from "./screens/GalleryPage";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-    <GalleryPage />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Header websiteName='Wild games' />
+      <Switch>
+        <Route exact path='/' component={GalleryPage} />
+        {/* <Route path='/game/:id' component={GamePage} /> */}
+      </Switch>
+    </BrowserRouter>
   );
 }
 
