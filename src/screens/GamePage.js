@@ -14,7 +14,7 @@ const GamePage = () => {
   console.log(imgSrc);
   return (
           <div>
-             <div className="bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
+             <div className="bg-image game-page w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
               <div className="backdrop w-10/12 md:w-1/4 bg-white bg-opacity-10 rounded p-3 text-white border border-gray-300 shadow-lg">
                 {/* header */}
                 <div className="w-full mb-3 pb-3 border-b border-1 border-white">
