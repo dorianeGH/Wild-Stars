@@ -1,21 +1,8 @@
-import { useParams } from "react-router";
-import Puzzle from "../components/Puzzle";
+import React from "react";
 import dayjs from "dayjs";
-import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import duration from "dayjs/plugin/duration";
 
-dayjs.extend(duration);
-
-const GamePage = () => {
-  const { id, url } = useParams();
-  console.log(id);
-  const [isStart, setIsStart] = useState(true);
-
-  const location = useLocation();
-  const imgSrc = location.state != null ? location.state.url : "";
-  console.log(imgSrc);
-
+export default function Timer() {
   const initialTimerValue = 0;
   const [secondsLeft, setSecondsLeft] = useState(initialTimerValue);
   const [chronoStarted, setChronoStarted] = useState(false);
@@ -55,17 +42,13 @@ const GamePage = () => {
   }, [secondsLeft]);
 
   return (
-    <div>
-      <h1>Jouez !</h1>
+    <>
       <button type='button' onClick={handleChronoToggle}>
         {chronoStarted ? "Stop" : "Start"}
       </button>
       <div className='text-xl'>
         {dayjs.duration(secondsLeft, "seconds").format("mm:ss")}
       </div>
-      <Puzzle />
-    </div>
+    </>
   );
-};
-
-export default GamePage;
+}
