@@ -10,7 +10,11 @@ export default function Card({ title, url, id }) {
           <h2 className='text-center font-semibold text-shadow'>{title}</h2>
         </div>
         <div>
-          <img class='w-full h-48 object-cover mb-2' src={url} alt={title} />
+          <img
+            className='w-full h-48 object-cover mb-2'
+            src={url}
+            alt={title}
+          />
         </div>
       </Link>
     </div>
