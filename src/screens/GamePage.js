@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+// import { useParams } from "react-router";
 import Puzzle from "../components/Puzzle";
 import { useLocation } from "react-router-dom";
 import "./GamePage.css";

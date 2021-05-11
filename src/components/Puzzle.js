@@ -88,42 +88,49 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
 
   return (
     <div>
-      <div>
-        <button
-          id="button-plus"
-          onClick={() => {
-            setPuzzleRows(puzzleRows + 1);
-          }}
-        >
-          +
-        </button>
-        <span>Rows number: {puzzleRows}</span>
-        <button
-          id="button-minus"
-          onClick={() => {
-            setPuzzleRows(puzzleRows - 1);
-          }}
-        >
-          -
-        </button>
-
-        <button
-          id="button-plus"
-          onClick={() => {
-            setPuzzleColumns(puzzleColumns + 1);
-          }}
-        >
-          +
-        </button>
-        <span>Columns number: {puzzleColumns}</span>
-        <button
-          id="button-minus"
-          onClick={() => {
-            setPuzzleColumns(puzzleColumns - 1);
-          }}
-        >
-          -
-        </button>
+      <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center">
+          <button
+            id="button-plus"
+            onClick={() => {
+              setPuzzleRows(puzzleRows + 1);
+            }}
+          >
+            +
+          </button>
+          <div className="w-40 text-center">Rows number: {puzzleRows}</div>
+          <button
+            id="button-minus"
+            onClick={() => {
+              setPuzzleRows(puzzleRows > 2 ? puzzleRows - 1 : puzzleRows);
+            }}
+          >
+            -
+          </button>
+        </div>
+        <div className="flex justify-center items-center">
+          <button
+            id="button-plus"
+            onClick={() => {
+              setPuzzleColumns(puzzleColumns + 1);
+            }}
+          >
+            +
+          </button>
+          <div className="w-40 text-center">
+            Columns number: {puzzleColumns}
+          </div>
+          <button
+            id="button-minus"
+            onClick={() => {
+              setPuzzleColumns(
+                puzzleColumns > 2 ? puzzleColumns - 1 : puzzleColumns
+              );
+            }}
+          >
+            -
+          </button>{" "}
+        </div>
       </div>
       <div
         className="puzzle"

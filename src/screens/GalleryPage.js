@@ -2,7 +2,7 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./gallery-page.css"
+import "./gallery-page.css";
 // require("dotenv").config();
 
 //Call API for pictures
