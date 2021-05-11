@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import Puzzle from "../components/Puzzle";
+import Modal from "./Modal";
 import { useLocation } from "react-router-dom";
 
 const GamePage = () => {
@@ -12,7 +12,7 @@ const GamePage = () => {
   return (
     <div>
       <h1>Jouez !</h1>
-      <Puzzle />
+      <Modal />
     </div>
   );
 };
