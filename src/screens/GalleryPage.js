@@ -4,5 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const GalleryPage = () => {
-  return <div></div>;
+  return <div>
+    <
+  </div>;
 };
+
+
+export default GalleryPage
