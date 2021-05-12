@@ -105,7 +105,7 @@ const GamePage = () => {
           </div>
         </div>
         {showRobot ? (
-          <div className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20">
+          <div className="inset-y-40 fixed z-20">
             <Robot />
           </div>
         ) : null}
