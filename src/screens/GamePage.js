@@ -47,7 +47,7 @@ const GamePage = () => {
             <Modal />
           </div>
         ) : null}
-        <div>
+        <div className="bg-black">
           <div className="video-container absolute">
             <Link
               to="/"

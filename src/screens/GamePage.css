@@ -12,7 +12,8 @@
 
 .video-container {
   width: 100vw;
-  overflow: hidden;
+
+  /* overflow: hidden; */
   display: block;
-  height: 100vh;
+  /* height: 100vh; */
 }
