@@ -22,11 +22,11 @@ const GamePage = () => {
       {victory ? <Modal /> : null}
       <div>
         <div>
-          <div className="bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
-            <div className="backdrop mt-40 bg-white bg-opacity-10 rounded p-3 text-white border border-gray-300 shadow-lg">
+          <div className='bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5'>
+            <div className='backdrop mt-40 bg-white bg-opacity-10 rounded p-3 text-white border border-gray-300 shadow-lg'>
               {/* header */}
-              <div className="w-full mb-3 pb-3 border-b border-1 border-white">
-                <h3 className="text-xl font-semibold text-shadow">
+              <div className='w-full mb-3 pb-3 border-b border-1 border-white'>
+                <h3 className='text-xl font-semibold text-shadow'>
                   Play Now !
                 </h3>
               </div>
@@ -37,7 +37,7 @@ const GamePage = () => {
                   imageHeight={imageHeight}
                   imageWidth={imageWidth}
                 />
-                <p className="mb-3 tracking-wide text-base text-shadow">
+                <p className='mb-3 tracking-wide text-base text-shadow'>
                   It's your turn jigsaw guys!
                 </p>
                 {/* <button className="backdrop bg-white bg-opacity-0 border border-white px-3 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40 hover:bg-opacity-10 text-lg">
