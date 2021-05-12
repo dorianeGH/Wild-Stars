@@ -90,7 +90,6 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
       if (boxes.filter((tile) => tile.positionBase !== tile.id).length === 0) {
         sleep(300).then(() => {
           setChronoStarted(!chronoStarted);
-          alert("Congratulations! You win!");
           setVictory(true);
         });
       }
