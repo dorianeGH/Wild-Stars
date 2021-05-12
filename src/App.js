@@ -6,7 +6,7 @@ import GalleryPage from "./screens/GalleryPage";
 function App() {
   return (
     <BrowserRouter>
-      <Header websiteName='Wild games' />
+      {/* <Header websiteName='Wild games' /> */}
       <Switch>
         <Route exact path='/' component={GalleryPage} />
         <Route path='/games/:id' component={GamePage} />
