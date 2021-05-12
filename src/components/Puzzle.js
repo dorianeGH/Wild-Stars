@@ -1,37 +1,19 @@
 import "./Puzzle.css";
 import _ from "lodash";
-import { useEffect, useState } from "react";
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
-
-import { useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import VictoryContext from "../contexts/VictoryContext";
-
-dayjs.extend(duration);
+import ChronoContext from "../contexts/ChronoContext";
 
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
   const { victory, setVictory } = useContext(VictoryContext);
+  const { chronoStarted, setChronoStarted } = useContext(ChronoContext);
+
   const [puzzleRows, setPuzzleRows] = useState(3);
   const [puzzleColumns, setPuzzleColumns] = useState(4);
   const [boxes, setBoxes] = useState([]);
-
-  //chrono
-  const [seconds, setSeconds] = useState(0);
-  const [chronoStarted, setChronoStarted] = useState(true);
-
-  useEffect(() => {
-    let timerId = null;
-    if (chronoStarted) {
-      timerId = setInterval(() => {
-        setSeconds((sec) => sec + 1);
-      }, 1000);
-    }
-    return () => {
-      if (timerId) clearInterval(timerId);
-    };
-  }, [chronoStarted]);
+  const [firstClic, setFirstClic] = useState(true);
 
   //Puzzle
   useEffect(() => {
@@ -97,6 +79,10 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
   }, [boxes]);
 
   const handleDragStart = (data) => (event) => {
+    if (firstClic) {
+      setChronoStarted(true);
+      setFirstClic(false);
+    }
     let fromBox = JSON.stringify({ id: data });
     event.dataTransfer.setData("dragContent", fromBox);
   };
@@ -117,9 +103,6 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <div className="text-xl">
-          {dayjs.duration(seconds, "seconds").format("mm:ss")}
-        </div>
         <div className="flex justify-center items-center">
           <button
             id="button-plus"
@@ -164,7 +147,7 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
         </div>
       </div>
       <div
-        className="puzzle"
+        className="puzzle m-auto"
         style={{
           "--puzzle-img": `url(${imgSrc})`,
           "--puzzle-row": `${puzzleRows}`,
