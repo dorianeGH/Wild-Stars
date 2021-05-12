@@ -1,14 +1,18 @@
-.bg-image {
-background-image: url(https://i.postimg.cc/Pq2fJrXw/bg00.jpg);
-background-size: cover;
-background-position: center;
-    }
+* {
+  box-sizing: border-box;
+}
 
 .backdrop {
-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .text-shadow {
-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.video-container {
+  width: 100vw;
+  overflow: hidden;
+  display: block;
+  height: 100vh;
+}

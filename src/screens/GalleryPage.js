@@ -2,7 +2,7 @@
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./gallery-page.css"
+import "./gallery-page.css";
 // require("dotenv").config();
 
 //Call API for pictures
@@ -29,10 +29,19 @@ export default function GalleryPage() {
   }, []);
 
   return (
-    <div className="gallery-page bg-image bg-fixed w-full min-h-screen flex flex-wrap justify-center items-center gap-10 py-5">
-      {pictureList.map(({ title, url }, key) => (
-        <Card key={key} id={key} title={title} url={url} />
-      ))}
-    </div>
+    <>
+      <div className="header-bg h-28 text-center text-4xl bg-auto text-gray-200">
+        <h1>Welcome to SpacePuzzle</h1>
+        <h2 className="text-2xl">011101100010011110100100100110000101</h2>
+        <h4 className="text-xl">
+          ( Click on a picture to start the SpacePuzzle )
+        </h4>
+      </div>
+      <div className="gallery-page top-28 bg-image bg-fixed w-full min-h-screen flex flex-wrap justify-center items-center gap-10 py-5">
+        {pictureList.map(({ title, url }, key) => (
+          <Card key={key} id={key} title={title} url={url} />
+        ))}
+      </div>
+    </>
   );
 }
