@@ -147,7 +147,9 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
         </div>
       </div>
       <div
-        className="puzzle m-auto"
+        className={
+          victory ? "puzzle puzzle-victory m-auto" : "puzzle puzzle-base m-auto"
+        }
         style={{
           "--puzzle-img": `url(${imgSrc})`,
           "--puzzle-row": `${puzzleRows}`,
