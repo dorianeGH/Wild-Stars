@@ -50,12 +50,9 @@ const GamePage = () => {
                     imageHeight={imageHeight}
                     imageWidth={imageWidth}
                   />
-                  <p className='mb-3 tracking-wide text-base text-shadow text-center'>
-                    It's your turn jigsaw guys!
-                  </p>
-                  {/* <button className="backdrop bg-white bg-opacity-0 border border-white px-3 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40 hover:bg-opacity-10 text-lg">
-                Back
-              </button> */}
+                  <button className='w-full mb-0 tracking-wide text-base text-shadow text-center'>
+                    Need help ?
+                  </button>
                 </div>
               </div>
             </div>
