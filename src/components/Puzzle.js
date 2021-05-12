@@ -3,17 +3,19 @@ import _ from "lodash";
 import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-import Modal from "./Modal";
+
+import { useContext } from "react";
+import VictoryContext from "../contexts/VictoryContext";
 
 dayjs.extend(duration);
 
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
+  const { victory, setVictory } = useContext(VictoryContext);
   const [puzzleRows, setPuzzleRows] = useState(3);
   const [puzzleColumns, setPuzzleColumns] = useState(4);
   const [boxes, setBoxes] = useState([]);
-  const [victory, setVictory] = useState(null);
 
   //chrono
   const [seconds, setSeconds] = useState(0);
@@ -88,8 +90,8 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
       if (boxes.filter((tile) => tile.positionBase !== tile.id).length === 0) {
         sleep(300).then(() => {
           setChronoStarted(!chronoStarted);
-          // alert("Congratulations! You win!");
-          setVictory(<Modal />);
+          alert("Congratulations! You win!");
+          setVictory(true);
         });
       }
     }
@@ -115,7 +117,6 @@ export default function Puzzle({ imgSrc, imageHeight, imageWidth }) {
 
   return (
     <div>
-      {victory}
       <div className="flex justify-center items-center">
         <div className="text-xl">
           {dayjs.duration(seconds, "seconds").format("mm:ss")}
