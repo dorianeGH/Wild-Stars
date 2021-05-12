@@ -33,7 +33,7 @@ const GamePage = () => {
 
   useEffect(() => {
     if (victory) {
-      sleep(10000).then(() => {
+      sleep(5000).then(() => {
         setShowRobot(!showRobot);
       });
     }
