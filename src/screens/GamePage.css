@@ -1,7 +1,6 @@
-/* .bg-image {
-  background-size: cover;
-  background-position: center;
-} */
+* {
+  box-sizing: border-box;
+}
 
 .backdrop {
   backdrop-filter: blur(5px);
