@@ -29,8 +29,22 @@ const GamePage = () => {
           </div>
         ) : null}
         <div>
-          <div className="bg-image w-full min-h-screen flex flex-wrap justify-center items-center gap-3 py-5">
-            <div className="backdrop mt-40  rounded p-3 text-white border border-gray-300 shadow-lg bg-gray-900 bg-opacity-60 ">
+          <div className="video-container absolute">
+            <video
+              autoPlay
+              loop
+              muted
+              className="w-auto min-w-full min-h-full max-w-none"
+            >
+              <source
+                src="https://live.staticflickr.com/video/16037006602/402e4e26a3/288p.mp4?s=eyJpIjoxNjAzNzAwNjYwMiwiZSI6MTYyMDc3NjIwNSwicyI6ImMyMWRmNDFkYzVlYjBmZDllZTI3ZGNiYzVkZWVkMWQ2YzhlZTU1NTYiLCJ2IjoxfQ"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="pt-40 flex flex-wrap justify-center items-center">
+            <div className="backdrop rounded p-3 text-white border border-gray-300 shadow-lg bg-gray-900 bg-opacity-60 ">
               {/* header */}
               <div className="w-full mb-3 pb-3 border-b border-1 border-white flex justify-around items-center">
                 <h3 className="text-xl font-semibold text-shadow">
@@ -48,9 +62,6 @@ const GamePage = () => {
                 <p className="mb-3 tracking-wide text-base text-shadow text-center">
                   It's your turn jigsaw guys!
                 </p>
-                {/* <button className="backdrop bg-white bg-opacity-0 border border-white px-3 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-40 hover:bg-opacity-10 text-lg">
-                Back
-              </button> */}
               </div>
             </div>
           </div>
