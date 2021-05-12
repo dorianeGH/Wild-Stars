@@ -4,6 +4,7 @@ body {
 } */
 .ag-space {
   height: 100%;
+  width: 100vw;
   padding: 500px 0 0;
   /* background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/bg.jpg)
     no-repeat 50% 0 #01010b; */
@@ -19,7 +20,7 @@ body {
 }
 
 .ag-format-container {
-  width: 1142px;
+  width: 500px;
   margin: 0 auto;
 }
 

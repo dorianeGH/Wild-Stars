@@ -105,7 +105,7 @@ const GamePage = () => {
           </div>
         </div>
         {showRobot ? (
-          <div className="inset-y-40 fixed z-20">
+          <div className="inset-y-40 fixed m-auto z-20">
             <Robot />
           </div>
         ) : null}
