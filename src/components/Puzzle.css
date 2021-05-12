@@ -3,14 +3,11 @@ body {
 }
 
 .puzzle {
-  /* --puzzle-width: 16rem;
-  --puzzle-height: 24rem; */
   --puzzle-row: 3;
   --puzzle-col: 4;
   --puzzle-gap: 1px;
   --puzzle-frag-width: calc(var(--puzzle-width) / var(--puzzle-col));
   --puzzle-frag-height: calc(var(--puzzle-height) / var(--puzzle-row));
-
   display: flex;
   flex-wrap: wrap;
   width: calc(
@@ -27,14 +24,13 @@ body {
   width: var(--puzzle-frag-width);
   height: var(--puzzle-frag-height);
   order: var(--order);
-  margin: var(--puzzle-gap);
   background: var(--puzzle-img) var(--x-offset) var(--y-offset) /
     var(--puzzle-width) var(--puzzle-height) no-repeat;
+  margin: var(--puzzle-gap);
   border-radius: 5px;
 }
 
 button {
-  /* padding: 5px 10px; */
   margin: 20px;
   height: 40px;
   width: 40px;
