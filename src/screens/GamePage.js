@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Puzzle from "../components/Puzzle";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -7,12 +7,16 @@ import VictoryContext from "../contexts/VictoryContext";
 import ChronoContext from "../contexts/ChronoContext";
 import Modal from "../components/Modal";
 import Timer from "../components/Timer";
+import Robot from "../components/Robot";
 import { Link } from "react-router-dom";
+
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 const GamePage = () => {
   const [victory, setVictory] = useState(false);
   const [chronoStarted, setChronoStarted] = useState(false);
   const [cheat, setCheat] = useState(false);
+  const [showRobot, setShowRobot] = useState(false);
   const location = useLocation();
   let imgSrc = "";
   let imageHeight = 0;
@@ -26,11 +30,20 @@ const GamePage = () => {
   function handleCheatImage() {
     setCheat(!cheat);
   }
+
+  useEffect(() => {
+    if (victory) {
+      sleep(10000).then(() => {
+        setShowRobot(!showRobot);
+      });
+    }
+  }, [victory]);
+
   return (
     <VictoryContext.Provider value={{ victory, setVictory }}>
       <ChronoContext.Provider value={{ chronoStarted, setChronoStarted }}>
         {victory ? (
-          <div className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0 z-10 outline-none focus:outline-none">
             <Modal />
           </div>
         ) : null}
@@ -91,6 +104,11 @@ const GamePage = () => {
             </div>
           </div>
         </div>
+        {showRobot ? (
+          <div className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0 z-20">
+            <Robot />
+          </div>
+        ) : null}
       </ChronoContext.Provider>
     </VictoryContext.Provider>
   );

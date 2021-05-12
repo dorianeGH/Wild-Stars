@@ -1,0 +1,388 @@
+/* html,
+body {
+  height: 100%;
+} */
+.ag-space {
+  height: 100%;
+  padding: 500px 0 0;
+  /* background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/bg.jpg)
+    no-repeat 50% 0 #01010b; */
+  /* background-size: cover; */
+
+  overflow: hidden;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+/* robot */
+.ag-robot_platform {
+  height: 150px;
+  width: 260px;
+  margin: 0 auto;
+  background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/platform.png)
+    no-repeat 50% 50%;
+  background-size: 100% 100%;
+
+  z-index: 100;
+  position: relative;
+}
+
+.ag-robot {
+  height: 26.0625em;
+  width: 26.25em;
+
+  z-index: 100;
+  position: absolute;
+  right: -2.5em;
+  bottom: 6.25em;
+
+  -webkit-animation: an-roboto 20s ease-in-out 0ms normal none infinite;
+  -moz-animation: an-roboto 20s ease-in-out 0ms normal none infinite;
+  -o-animation: an-roboto 20s ease-in-out 0ms normal none infinite;
+  animation: an-roboto 20s ease-in-out 0ms normal none infinite;
+}
+.ag-robot::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 102;
+  width: 100%;
+  height: 100%;
+  background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/robot.png)
+    no-repeat 100% 100%;
+  background-size: 70% 100%;
+}
+.ag-robot::before {
+  content: "";
+
+  position: absolute;
+  top: 6.25em;
+  left: -0.9375em;
+  z-index: 103;
+  width: 9.9375em;
+  height: 5.625em;
+  background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/roboto-hand.png)
+    no-repeat 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-animation: an-roboto-hand 20s linear 0ms normal none infinite;
+  -moz-animation: an-roboto-hand 20s linear 0ms normal none infinite;
+  -o-animation: an-roboto-hand 20s linear 0ms normal none infinite;
+  animation: an-roboto-hand 20s linear 0ms normal none infinite;
+}
+
+@-webkit-keyframes an-roboto-hand {
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  65%,
+  75%,
+  85%,
+  90%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  60%,
+  70%,
+  80% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+@-moz-keyframes an-roboto-hand {
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  65%,
+  75%,
+  85%,
+  90%,
+  100% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -moz-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  60%,
+  70%,
+  80% {
+    -moz-transform: rotate(40deg);
+    transform: rotate(40deg);
+
+    -moz-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+@-o-keyframes an-roboto-hand {
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  65%,
+  75%,
+  85%,
+  90%,
+  100% {
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  60%,
+  70%,
+  80% {
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+@keyframes an-roboto-hand {
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  65%,
+  75%,
+  85%,
+  90%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  60%,
+  70%,
+  80% {
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+
+@-webkit-keyframes an-roboto {
+  0%,
+  20%,
+  40%,
+  100% {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+  10%,
+  30%,
+  50% {
+    -webkit-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  60%,
+  70%,
+  80%,
+  90% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+@-moz-keyframes an-roboto {
+  0%,
+  20%,
+  40%,
+  100% {
+    -moz-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+  10%,
+  30%,
+  50% {
+    -moz-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  60%,
+  70%,
+  80%,
+  90% {
+    -moz-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+@-o-keyframes an-roboto {
+  0%,
+  20%,
+  40%,
+  100% {
+    -o-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+  10%,
+  30%,
+  50% {
+    -o-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  60%,
+  70%,
+  80%,
+  90% {
+    -o-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+@keyframes an-roboto {
+  0%,
+  20%,
+  40%,
+  100% {
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+  10%,
+  30%,
+  50% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -o-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  60%,
+  70%,
+  80%,
+  90% {
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -o-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+/* /robot */
+
+/* planet */
+/* .ag-planet {
+  height: 18.5em;
+  width: 106em;
+  background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/animation-robot/images/planet.png)
+    no-repeat;
+  background-size: cover;
+
+  z-index: 1;
+  position: absolute;
+  bottom: 9.375em;
+
+  -webkit-animation: an-planet 120s linear 0ms normal none infinite;
+  -moz-animation: an-planet 120s linear 0ms normal none infinite;
+  -o-animation: an-planet 120s linear 0ms normal none infinite;
+  animation: an-planet 120s linear 0ms normal none infinite;
+}
+
+@-webkit-keyframes an-planet {
+  0% {
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(150%);
+    transform: translateX(150%);
+  }
+}
+@-moz-keyframes an-planet {
+  0% {
+    -moz-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  100% {
+    -moz-transform: translateX(150%);
+    transform: translateX(150%);
+  }
+}
+@-o-keyframes an-planet {
+  0% {
+    -o-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  100% {
+    -o-transform: translateX(150%);
+    transform: translateX(150%);
+  }
+}
+@keyframes an-planet {
+  0% {
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+    transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(150%);
+    -moz-transform: translateX(150%);
+    -o-transform: translateX(150%);
+    transform: translateX(150%);
+  }
+} */
+/* /planet */
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+}
+
+@media only screen and (max-width: 479px) {
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 960px;
+  }
+}
